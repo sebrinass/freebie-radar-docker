@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>FreebieRadar</Name>
+  <Repository>ghcr.io/sebrinass/freebie-radar-docker:latest</Repository>
+  <Registry>https://ghcr.io/sebrinass/freebie-radar-docker</Registry>
+  <Network>bridge</Network>
+  <ExtraNetworks/>
+  <MyIP/>
+  <MyMAC/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/ZiChuanLan/freebie-radar/issues</Support>
+  <Project>https://github.com/ZiChuanLan/freebie-radar</Project>
+  <ReadMe/>
+  <Overview>白嫖雷达（freebie-radar）：自托管的福利/优惠信息聚合站，自动抓取各类免费资源与促销动态并SQLite 一页聚合看板。默认开放访问，可通过 ADMIN_TOKEN 设置访问密码。</Overview>
+  <Category>Productivity:</Category>
+  <WebUI>http://[IP]:[PORT:8788]/</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/ZiChuanLan/freebie-radar/main/docs/icon.png</Icon>
+  <ExtraParams>--restart=unless-stopped</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <Memory>268m</Memory>
+  <DateInstalled>1764103600</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="Host Port 1" Target="8788" Default="" Mode="tcp" Description="Web UI port (container listens on 878)" Type="Port" Display="always" Required="false" Mask="false">8788Host:8788</Config>
+  <Config Name="Host Path 1" Target="/data" Default="" Mode="rw" Description="SQLite database directory (container port" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/freebie-radar</Config>
+  <Config Name="Host Key 1" Target="TZ" Default="Asia/Shanghai" Mode="" Description="Container timezone" Type="Variable" Display="always" Required="false" Mask="false">Asia/Shanghai</Config>
+  <Config Name="Host Key 2" Target="PORT" Default="8788" Mode="" Description="Listening port inside the container (keep 8788)" Type="Variable" Display="always" Required="false" Mask="false">8788</Config>
+  <Config Name="Host Key 3" Target="HOST" Default="0.0.0.0" Mode="" Description="Web server bind address (keep 0.0.0.0)" Type="Variable" Display="always" Required="false" Mask="false">0.0.0.0</0.0>
+Config>
+  <Config Name="Host Key 4" Target="DATABASE_PATH" Default="/data/radar.db" Mode="" Description="SQLite database file path" Type="Variable" Display="always" Required="false" Mask="false">/data/radar.db</Config>
+  <Config Name="Host Key 5" Target="SITE_MODE" Default="selfhost" Mode="" Description="selfhost = private instance, public = open instance" Type="Variable" Display="always" Required="false" Mask="false">selfhost</Config>
+  <Config Name="Host Key 6" Target="ADMIN_TOKEN" Default="" Mode="" Description="Admin password; leave empty for open access, set a token to lock down the UI" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="Host Key 7" Target="FLARESOLVERR_URL" Default="" Mode="" Description="Optional FlareSolverr endpoint for Cloudflare-protected sources (e.g. http://flaresolverr:8191)" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <TailscaleStateDir/>
+</Container>
